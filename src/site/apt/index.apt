@@ -1,0 +1,65 @@
+%{include|source-content=<div id\="apt-box">}
+
+Computes the convex hull of a set of three dimensional points.
+
+ The algorithm is a three dimensional implementation of Quickhull, as
+described in Barber, Dobkin, and Huhdanpaa, {{{http://citeseer.ist.psu.edu/barber96quickhull.html} ``The Quickhull
+Algorithm for Convex Hulls''}} (ACM Transactions on Mathematical Software,
+Vol. 22, No. 4, December 1996), and has a complexity of O(n log(n)) with
+respect to the number of points. A well-known C implementation of Quickhull
+that works for arbitrary dimensions is provided by {{{http://www.qhull.org}qhull}}.
+
+ A hull is constructed by providing a set of points to either a constructor or
+a build(Point3d[]) method. After the hull is built, its
+vertices and faces can be retrieved using getVertices() 
+and getFaces(). A typical usage might look like this:
+
+%{include|snippet=aj:..main(..)|source=com.github.quickhull3d.SimpleExample}
+
+ As a convenience, there are also build(double[]) and
+getVertices(double[]) methods which pass point information
+using an array of doubles.
+
+* Robustness
+
+ Because this algorithm uses floating point arithmetic, it is potentially vulnerable to errors arising from
+numerical imprecision. We address this problem in the same way as {{{http://www.qhull.org}qhull}}, by merging faces whose edges are not
+clearly convex. A face is convex if its edges are convex, and an edge is
+convex if the centroid of each adjacent plane is clearly below the
+plane of the other face. The centroid is considered below a plane if its
+distance to the plane is less than the negative of a
+getDistanceTolerance(). This tolerance represents
+the smallest distance that can be reliably computed within the available
+numeric precision. It is normally computed automatically from the point data,
+although an application may setExplicitDistanceTolerance set this
+tolerance explicitly.
+
+ Numerical problems are more likely to arise in situations where data points
+lie on or within the faces or edges of the convex hull. We have tested
+QuickHull3D for such situations by computing the convex hull of a random
+point set, then adding additional randomly chosen points which lie very close
+to the hull vertices and edges, and computing the convex hull again. The hull
+is deemed correct if check returns true. These
+tests have been successful for a large number of trials and so we are
+confident that QuickHull3D is reasonably robust.
+
+*Merged Faces
+
+ The merging of faces means that the faces returned by
+QuickHull3D may be convex polygons instead of triangles. If triangles are
+desired, the application may triangulate the faces, but
+it should be noted that this may result in triangles which are very small or
+thin and hence difficult to perform reliable convexity tests on. In other
+words, triangulating a merged face is likely to restore the numerical
+problems which the merging process removed. Hence is it possible that, after
+triangulation, {@link #check check} will fail (the same behavior is observed
+with triangulated output from {{{http://www.qhull.org}qhull}}).
+
+*Degenerate Input
+
+ It is assumed that the input points are
+non-degenerate in that they are not coincident, colinear, or colplanar, and
+thus the convex hull has a non-zero volume. If the input points are detected
+to be degenerate within the getDistanceTolerance(), an IllegalArgumentException will be thrown.
+
+%{include|source-content=</div>}

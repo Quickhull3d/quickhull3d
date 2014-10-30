@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="INDI for Java">
+	<bannerLeft>
+		<src>images/icon64.png</src>
+	</bannerLeft>
+	<bannerRight>
+		<src>images/INDIforJavaLogo64.png</src>
+	</bannerRight>
+	<publishDate position="left" format="yyyy-MM-dd" />
+	<version position="right" />
+	<poweredBy>
+		<logo name="Maven" href="http://maven.apache.org/" img="http://maven.apache.org/images/logos/maven-feather.png" />
+	</poweredBy>
+	<body>
+		<breadcrumbs>
+			<item name="INDI for Java" href="../index.html" />
+			<item name="${project.name}" href="index.html" />
+		</breadcrumbs>
+		<menu ref="modules" />
+		<menu ref="reports" />
+	</body>
+</project>
