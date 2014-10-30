@@ -9,14 +9,14 @@
 	<groupId>com.github.quickhull3d</groupId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<artifactId>com.github.quickhull3d</artifactId>
+	<artifactId>quickhull3d</artifactId>
 	<name>A Robust 3D Convex Hull Algorithm in Java</name>
 	<description>This is a 3D implementation of QuickHull for Java, based on the original paper by Barber, Dobkin, and Huhdanpaa and the C implementation known as qhull. The algorithm has O(n log(n)) complexity, works with double precision numbers, is fairly robust with respect to degenerate situations, and allows the merging of co-planar faces. </description>
 	<inceptionYear>2004</inceptionYear>
 	<organization>
 		<name>John E. Lloyd</name>
 	</organization>
-	<url>https://github.com/Quickhull3d/com.github.quickhull3d</url>
+	<url>https://github.com/Quickhull3d/quickhull3d</url>
 	<developers>
 		<developer>
 			<id>lloyd</id>
@@ -42,9 +42,9 @@
 		</developer>
 	</developers>
 	<scm>
-		<connection>scm:git:git://github.com/Quickhull3d/com.github.quickhull3d.git</connection>
-		<developerConnection>scm:git:git@github.com:Quickhull3d/com.github.quickhull3d.git</developerConnection>
-		<url>http://github.com/Quickhull3d/com.github.quickhull3d</url>
+		<connection>scm:git:git://github.com/Quickhull3d/quickhull3d.git</connection>
+		<developerConnection>scm:git:git@github.com:Quickhull3d/quickhull3d.git</developerConnection>
+		<url>http://github.com/Quickhull3d/quickhull3d</url>
 	</scm>
 	<distributionManagement>
 		<repository>
@@ -65,7 +65,7 @@
 	</distributionManagement>
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/Quickhull3d/com.github.quickhull3d/issues/</url>
+		<url>https://github.com/Quickhull3d/quickhull3d/issues/</url>
 	</issueManagement>
 	<licenses>
 		<license>
@@ -221,7 +221,7 @@
 						<goals>
 							<goal>site</goal>
 						</goals>
-						<phase>site</phase>
+						<phase>site-deploy</phase>
 					</execution>
 				</executions>
 			</plugin>
