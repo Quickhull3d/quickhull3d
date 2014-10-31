@@ -7,7 +7,7 @@
 		<version>7</version>
 	</parent>
 	<groupId>com.github.quickhull3d</groupId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 	<artifactId>quickhull3d</artifactId>
 	<name>A Robust 3D Convex Hull Algorithm in Java</name>
@@ -45,7 +45,8 @@
 		<connection>scm:git:git://github.com/Quickhull3d/quickhull3d.git</connection>
 		<developerConnection>scm:git:git@github.com:Quickhull3d/quickhull3d.git</developerConnection>
 		<url>https://github.com/Quickhull3d/quickhull3d</url>
-	</scm>
+	  <tag>quickhull3d-1.0.0</tag>
+  </scm>
 	<distributionManagement>
 		<repository>
 			<id>sonatype-nexus-staging</id>
