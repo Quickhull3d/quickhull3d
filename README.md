@@ -8,3 +8,5 @@ A tutorial on the QuickHull algorithm by Dirk Gregorius (Valve Software) was giv
 There are some other 3D convex hull implementations available in netland, but I didn't find any that satisfied all the above criteria, so I created my own. The principal class is QuickHull3D, which is contained within the package com.github.quickhull3d. It is actually a reimplementaion of an earlier piece of work, ConvexHull3D, which was based on an insertion algorithm and had a complexity of O(n^2).
 
 Mark Newbold has used this package to create a very picturesque applet that creates and displays Waterman polyhedra 
+
+See the maven project site here: [quickhull3d](http://quickhull3d.github.io/quickhull3d/)
