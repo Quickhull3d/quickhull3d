@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>INDI for Java &#x2013; FindBugs Bug Detector Report</title>
+    <title>Quickhull3d &#x2013; FindBugs Bug Detector Report</title>
     <style type="text/css" media="all">
       @import url("./css/maven-base.css");
       @import url("./css/maven-theme.css");
@@ -17,10 +17,10 @@
   <body class="composite">
     <div id="banner">
                     <div id="bannerLeft">
-                                                <img src="images/icon64.png" alt="$alt" />
+                                                <img src="images/math_girl.png" alt="$alt" />
                 </div>
                           <div id="bannerRight">
-                                                <img src="images/INDIforJavaLogo64.png" alt="$alt" />
+                                                <img src="images/d3_convex_hull_text.png" alt="$alt" />
                 </div>
             <div class="clear">
         <hr/>
@@ -31,15 +31,13 @@
                     
                 <div class="xleft">
         <span id="publishDate">Last Published: 2014-10-31</span>
-                          |                           <a href="../index.html" title="INDI for Java">INDI for Java</a>
-        &gt;
-                          <a href="index.html" title="A Robust 3D Convex Hull Algorithm in Java">A Robust 3D Convex Hull Algorithm in Java</a>
+                          |                           <a href="index.html" title="A Robust 3D Convex Hull Algorithm in Java">A Robust 3D Convex Hull Algorithm in Java</a>
         &gt;
     FindBugs Bug Detector Report
               </div>
             <div class="xright">        
                     
-                 <span id="projectVersion">Version: 1.0.0-SNAPSHOT</span>
+                 <span id="projectVersion">Version: 1.0.0</span>
       </div>
       <div class="clear">
         <hr/>
@@ -134,9 +132,9 @@
 <th>Line</th>
 <th>Priority</th></tr>
 <tr class="a">
-<td>Unused field: com.github.quickhull3d.Face.index</td>
-<td>PERFORMANCE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#UUF_UNUSED_FIELD">UUF_UNUSED_FIELD</a></td>
+<td>Unused public or protected field: com.github.quickhull3d.Face.index</td>
+<td>STYLE</td>
+<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD">UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD</a></td>
 <td>Not available</td>
 <td>Medium</td></tr></table></div><a name="com.github.quickhull3d.QuickHull3D"></a>
 <div class="section">
@@ -152,25 +150,25 @@
 <td>Found reliance on default encoding in com.github.quickhull3d.QuickHull3D.setFromQhull(double[], int, boolean): new java.io.InputStreamReader(InputStream)</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/com/github/quickhull3d/QuickHull3D.html#L373">373</a></td>
+<td><a href="./xref/com/github/quickhull3d/QuickHull3D.html#L366">366</a></td>
 <td>High</td></tr>
 <tr class="b">
 <td>Found reliance on default encoding in com.github.quickhull3d.QuickHull3D.setFromQhull(double[], int, boolean): new java.io.PrintStream(OutputStream)</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td><a href="./xref/com/github/quickhull3d/QuickHull3D.html#L372">372</a></td>
+<td><a href="./xref/com/github/quickhull3d/QuickHull3D.html#L365">365</a></td>
 <td>High</td></tr>
 <tr class="a">
 <td>com.github.quickhull3d.QuickHull3D.setFromQhull(double[], int, boolean) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_NUMBER_CTOR">DM_NUMBER_CTOR</a></td>
-<td><a href="./xref/com/github/quickhull3d/QuickHull3D.html#L403">403</a></td>
+<td><a href="./xref/com/github/quickhull3d/QuickHull3D.html#L396">396</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>Exception is caught when Exception is not thrown in com.github.quickhull3d.QuickHull3D.setFromQhull(double[], int, boolean)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#REC_CATCH_EXCEPTION">REC_CATCH_EXCEPTION</a></td>
-<td><a href="./xref/com/github/quickhull3d/QuickHull3D.html#L412">412</a></td>
+<td><a href="./xref/com/github/quickhull3d/QuickHull3D.html#L405">405</a></td>
 <td>Medium</td></tr></table></div>
       </div>
     </div>
