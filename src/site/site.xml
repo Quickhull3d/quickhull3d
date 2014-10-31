@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<project name="INDI for Java">
+<project name="Quickhull3d">
 	<bannerLeft>
-		<src>images/icon64.png</src>
+		<src>images/math_girl.png</src>
 	</bannerLeft>
 	<bannerRight>
-		<src>images/INDIforJavaLogo64.png</src>
+		<src>images/d3_convex_hull_text.png</src>
 	</bannerRight>
 	<publishDate position="left" format="yyyy-MM-dd" />
 	<version position="right" />
@@ -13,7 +13,6 @@
 	</poweredBy>
 	<body>
 		<breadcrumbs>
-			<item name="INDI for Java" href="../index.html" />
 			<item name="${project.name}" href="index.html" />
 		</breadcrumbs>
 		<menu ref="modules" />

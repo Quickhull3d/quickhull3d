@@ -9,6 +9,22 @@ Vol. 22, No. 4, December 1996), and has a complexity of O(n log(n)) with
 respect to the number of points. A well-known C implementation of Quickhull
 that works for arbitrary dimensions is provided by {{{http://www.qhull.org}qhull}}.
 
+*Download
+
+ Quickhull3d is now in central so just add the dependency:
+
+------------------------
+        ...
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.artifactId}</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		...
+------------------------
+
+*Usage 
+
  A hull is constructed by providing a set of points to either a constructor or
 a build(Point3d[]) method. After the hull is built, its
 vertices and faces can be retrieved using getVertices() 

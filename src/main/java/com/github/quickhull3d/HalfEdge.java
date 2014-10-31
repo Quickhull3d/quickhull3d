@@ -33,27 +33,27 @@ class HalfEdge {
     /**
      * The vertex associated with the head of this half-edge.
      */
-    Vertex vertex;
+    protected Vertex vertex;
 
     /**
      * Triangular face associated with this half-edge.
      */
-    Face face;
+    protected Face face;
 
     /**
      * Next half-edge in the triangle.
      */
-    HalfEdge next;
+    protected HalfEdge next;
 
     /**
      * Previous half-edge in the triangle.
      */
-    HalfEdge prev;
+    protected HalfEdge prev;
 
     /**
      * Half-edge associated with the opposite triangle adjacent to this edge.
      */
-    HalfEdge opposite;
+    protected HalfEdge opposite;
 
     /**
      * Constructs a HalfEdge with head vertex <code>v</code> and left-hand

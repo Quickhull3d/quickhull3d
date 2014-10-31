@@ -5,9 +5,5 @@
      "http://www.puppycrawl.com/dtds/suppressions_1_0.dtd">
 
 <suppressions>
-	<suppress checks="." files="org[\\/]gnu[\\/]savannah[\\/]gsl[\\/]" />
-	<suppress checks="." files="org[\\/]gnu[\\/]savannah[\\/]gsl[\\/]util[\\/]" />
-	<suppress checks="." files="org[\\/]indilib[\\/]i4j[\\/]driver[\\/]telescope[\\/]alignment[\\/]" />
-	<suppress checks="." files="org[\\/]indilib[\\/]i4j[\\/]driver[\\/]guider[\\/]" />
-	<suppress checks="." files="com.github.quickhull3d[\\/]" />
+<!-- 	<suppress checks="." files="com.github.quickhull3d[\\/]" /> -->
 </suppressions>

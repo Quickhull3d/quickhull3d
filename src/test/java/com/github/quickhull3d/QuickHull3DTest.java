@@ -355,7 +355,6 @@ public class QuickHull3DTest {
 
     void singleTest(double[] coords, int[][] checkFaces) throws Exception {
         QuickHull3D hull = new QuickHull3D();
-        hull.setDebug(debugEnable);
 
         hull.build(coords, coords.length / 3);
         if (triangulate) {
@@ -411,7 +410,6 @@ public class QuickHull3DTest {
         double[] coordsx = addDegeneracy(degeneracyTest, coords, hull);
 
         QuickHull3D xhull = new QuickHull3D();
-        xhull.setDebug(debugEnable);
 
         try {
             xhull.build(coordsx, coordsx.length / 3);
