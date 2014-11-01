@@ -69,11 +69,10 @@
 		<url>https://github.com/Quickhull3d/quickhull3d/issues/</url>
 	</issueManagement>
 	<licenses>
-		<license>
-			<name>GNU LESSER GENERAL PUBLIC LICENSE (LGPL) version 3</name>
-			<url>http://www.gnu.org/licenses/lgpl-3.0-standalone.html</url>
-			<distribution>repo</distribution>
-		</license>
+	        <license>
+            <name>The BSD License</name>
+            <url>http://www.opensource.org/licenses/bsd-license.html</url>
+        </license>
 	</licenses>
 	<build>
 		<extensions>
@@ -181,7 +180,7 @@
 						</goals>
 						<phase>process-sources</phase>
 						<configuration>
-							<licenseName>lgpl_v3</licenseName>
+							<licenseName>bsd_2</licenseName>
 							<roots>
 								<root>src/main/java</root>
 								<root>src/test</root>
