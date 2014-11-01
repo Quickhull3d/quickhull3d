@@ -283,7 +283,7 @@ public class Vector3d {
         double dy = y - v.y;
         double dz = z - v.z;
 
-        return (dx * dx + dy * dy + dz * dz);
+        return dx * dx + dy * dy + dz * dz;
     }
 
     /**

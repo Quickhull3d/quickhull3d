@@ -34,6 +34,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.io.StreamTokenizer;
+import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Vector;
 
@@ -369,8 +370,8 @@ public class QuickHull3D {
         }
         try {
             Process proc = Runtime.getRuntime().exec(commandStr);
-            PrintStream ps = new PrintStream(proc.getOutputStream());
-            StreamTokenizer stok = new StreamTokenizer(new InputStreamReader(proc.getInputStream()));
+            PrintStream ps = new PrintStream(proc.getOutputStream(), false, Charset.defaultCharset().name());
+            StreamTokenizer stok = new StreamTokenizer(new InputStreamReader(proc.getInputStream(), Charset.defaultCharset()));
 
             ps.println("3 " + nump);
             for (int i = 0; i < nump; i++) {
@@ -400,7 +401,7 @@ public class QuickHull3D {
                     if (stok.ttype != StreamTokenizer.TT_NUMBER) {
                         throw new IllegalArgumentException("Expecting face index");
                     }
-                    indexList.add(0, new Integer((int) stok.nval));
+                    indexList.add(0, Integer.valueOf((int) stok.nval));
                 }
                 faceIndices[i] = new int[indexList.size()];
                 int k = 0;
@@ -409,12 +410,20 @@ public class QuickHull3D {
                 }
             }
             setHull(coords, nump, faceIndices, numf);
+        } catch (IllegalArgumentException e) {
+            throw e;
         } catch (Exception e) {
             throw new IllegalStateException("problem during hull calculation", e);
         }
     }
 
-    private void printPoints(PrintStream ps) {
+    /**
+     * print all points to the print stream (very point a line)
+     * 
+     * @param ps
+     *            the print stream to write to
+     */
+    public void printPoints(PrintStream ps) {
         for (int i = 0; i < numPoints; i++) {
             Point3d pnt = pointBuffer[i].pnt;
             ps.println(pnt.x + ", " + pnt.y + ", " + pnt.z + ",");
@@ -915,9 +924,9 @@ public class QuickHull3D {
     }
 
     private void getFaceIndices(int[] indices, Face face, int flags) {
-        boolean ccw = ((flags & CLOCKWISE) == 0);
-        boolean indexedFromOne = ((flags & INDEXED_FROM_ONE) != 0);
-        boolean pointRelative = ((flags & POINT_RELATIVE) != 0);
+        boolean ccw = (flags & CLOCKWISE) == 0;
+        boolean indexedFromOne = (flags & INDEXED_FROM_ONE) != 0;
+        boolean pointRelative = (flags & POINT_RELATIVE) != 0;
 
         HalfEdge hedge = face.he0;
         int k = 0;
@@ -1001,7 +1010,6 @@ public class QuickHull3D {
         do {
             Face oppFace = hedge.oppositeFace();
             boolean merge = false;
-            double dist1, dist2;
 
             if (mergeType == NONCONVEX) { // then merge faces if they are
                                           // definitively non-convex
@@ -1014,7 +1022,7 @@ public class QuickHull3D {
                 // wrt to the larger face; otherwise, just mark
                 // the face non-convex for the second pass.
                 if (face.area > oppFace.area) {
-                    if ((dist1 = oppFaceDistance(hedge)) > -tolerance) {
+                    if (oppFaceDistance(hedge) > -tolerance) {
                         merge = true;
                     } else if (oppFaceDistance(hedge.opposite) > -tolerance) {
                         convex = false;
@@ -1248,10 +1256,8 @@ public class QuickHull3D {
         boolean convex = true;
         for (Iterator it = faces.iterator(); it.hasNext();) {
             Face face = (Face) it.next();
-            if (face.mark == Face.VISIBLE) {
-                if (!checkFaceConvexity(face, tol, ps)) {
-                    convex = false;
-                }
+            if (face.mark == Face.VISIBLE && !checkFaceConvexity(face, tol, ps)) {
+                convex = false;
             }
         }
         return convex;

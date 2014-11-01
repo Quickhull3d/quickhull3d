@@ -50,8 +50,6 @@ class Face {
 
     protected HalfEdge he0;
 
-    protected int index;
-
     protected int mark = VISIBLE;
 
     protected Face next;
@@ -366,7 +364,6 @@ class Face {
         }
 
         Vertex v0 = he0.head();
-        Face prevFace = null;
 
         hedge = he0.next;
         HalfEdge oppPrev = hedge.opposite;
@@ -400,11 +397,15 @@ class Face {
 
     }
 
-    private double areaSquared(HalfEdge hedge0, HalfEdge hedge1) {
-        // return the squared area of the triangle defined
-        // by the half edge hedge0 and the point at the
-        // head of hedge1.
-
+    /**
+     * return the squared area of the triangle defined by the half edge hedge0
+     * and the point at the head of hedge1.
+     * 
+     * @param hedge0
+     * @param hedge1
+     * @return
+     */
+    public double areaSquared(HalfEdge hedge0, HalfEdge hedge1) {
         Point3d p0 = hedge0.tail().pnt;
         Point3d p1 = hedge0.head().pnt;
         Point3d p2 = hedge1.head().pnt;
